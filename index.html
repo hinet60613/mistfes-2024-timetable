@@ -1,0 +1,22 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="main"></div>
+    <script type="text/javascript">
+        fetch('resources/timetable/20240609/reny.json')
+            .then(response => response.json())
+            .then(
+                data => {
+                    data.forEach((info, index) => {
+                        console.log({ info })
+                        document.getElementById('main').innerHTML += info.start + " -> " + info.end + ": " + info.group + "<br />"
+                    })
+                }
+            );
+    </script>
+</body>
+
+</html>
